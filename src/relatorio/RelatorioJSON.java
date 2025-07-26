@@ -3,7 +3,8 @@ package relatorio;
 import model.ItemPedido;
 import model.Pedido;
 
-public class RelatorioJSON {
+public class RelatorioJSON implements Relatorio {
+    @Override
     public void gerar(Pedido pedido) {
         StringBuilder sb = new StringBuilder();
         sb.append("{\n");

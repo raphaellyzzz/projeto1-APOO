@@ -1,7 +1,16 @@
 package servico;
 
-public class FreteCalculadoraDistancia {
-    public double calcular(double distanciaKm) {
-        return distanciaKm * 0.50;
+import model.Pedido;
+
+public class FreteCalculadoraDistancia implements FreteCalculadora {
+    private double distanciaKm;
+
+    public FreteCalculadoraDistancia(double distanciaKm) {
+        this.distanciaKm = distanciaKm;
+    }
+
+    @Override
+    public double calcular(Pedido pedido) {
+        return this.distanciaKm * 0.50;
     }
 }

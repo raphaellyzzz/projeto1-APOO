@@ -3,7 +3,8 @@ package relatorio;
 import model.ItemPedido;
 import model.Pedido;
 
-public class RelatorioTexto {
+public class RelatorioTexto implements Relatorio {
+    @Override
     public void gerar(Pedido pedido) {
         System.out.println("Cliente: " + pedido.getCliente().getNome());
         System.out.println("Produtos:");
