@@ -339,7 +339,11 @@ public class Main {
         System.out.println("\nPedidos de " + clienteSelecionado.getNome() + ":");
         for (int i = 0; i < pedidosDoCliente.size(); i++) {
             Pedido pedido = pedidosDoCliente.get(i);
-            System.out.println(i + ": Pedido (Total: R$ " + String.format("%.2f", pedido.getTotalComFrete()) + ")");
+            String primeiroProdutoNome = "Nenhum Produto";
+            if (!pedido.getItens().isEmpty()) {
+                primeiroProdutoNome = pedido.getItens().get(0).getProduto().getNome();
+            }
+            System.out.println(i + ": Pedido (" + primeiroProdutoNome + " | Total: R$ " + String.format("%.2f", pedido.getTotalComFrete()) + ")");
         }
 
         int pedidoIndice;
